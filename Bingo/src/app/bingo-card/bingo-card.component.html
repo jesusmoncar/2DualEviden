@@ -1,0 +1,37 @@
+<div class="numero-actual" *ngIf="numeroActual !== null">
+  <h1>{{ numeroActual }}</h1>
+</div>
+
+<div class="numerosRamdon">
+  <h3>Números generados:</h3>
+  <div *ngIf="numerosGenerados.length > 0; else noNumeros">
+    <span class="numero" *ngFor="let numero of numerosGenerados">{{ numero }}</span>
+  </div>
+  <ng-template #noNumeros>
+    <p>No se han generado números aún.</p>
+  </ng-template>
+</div>
+
+<div class="bingo-card-container">
+  <!-- Cartón de Bingo -->
+  <div class="bingo-card">
+    <div class="row" *ngFor="let row of carton; let rowIndex = index">
+      <button
+        class="cell"
+        *ngFor="let cell of row; let colIndex = index"
+        [ngClass]="{ marked: cell.marcado }"
+        (click)="numeroMarcado(rowIndex, colIndex)"
+      >
+        {{ cell.value || '' }}
+      </button>
+    </div>
+    <button class="btn-primary" (click)="comprobarLinea()">Linea</button>
+  </div>
+
+  <!-- Controles de generador de números -->
+  <div class="controles">
+    <button (click)="toggleGeneracionNumeros()">
+      {{ generandoNumeros ? 'Parar' : 'Empezar' }}
+    </button>
+  </div>
+</div>

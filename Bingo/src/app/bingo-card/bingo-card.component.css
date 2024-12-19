@@ -1,0 +1,99 @@
+.numero-actual {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  font-weight: bold;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.numerosRamdon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.numerosRamdon .numero {
+  display: block;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.bingo-card-container {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Ajusta el tamaño del contenedor */
+  max-width: 800px; /* Tamaño máximo para el contenedor */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.bingo-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Toma el 80% del espacio del contenedor */
+}
+
+.bingo-card .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cell.marked {
+  background-color: #4caf50;
+  color: white;
+}
+
+.controles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.controles button {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
